@@ -18,9 +18,35 @@ module.exports = (router, Group, Solo, FCM)=>{
     if(like >= pan.randomNum){
       var serverKey = "AAAA75GQ0wI:APA91bHz67Vy7P2T5AqtWnpM0cGByi2Uu6NnlA4nAhK0fNHcJlLgPBqRKGoqdhd56N0MXtMmXU3YEsMA56jZHjBkJwPJ6v6ps1_4pG4VYVAv-cFry1w1XBobIBG60BRhTBTntFrBXr2f"
       var fcm = new FCM(serverKey);
-      var message = {
-        to: ['fZ9pmwebsgI:APA91bELcn48u99AAGrmp-ktHla5mJ1BROgmAZ73xjbq6yn-lOhqGPd1KTxAd6_ezSDcJvF9uhDQY_GpTagwpHzsR5BnIOMC8jSLJz7wCuCIA0yihbhQSTbl3tda59b6Amcru5O8nKRm',
-        'fa-nJor7aWs:APA91bG6LUSfTC9pOvuwPOEIDuY_VoavmY0pa1ylHlFU1FLex2gxNAi_GqfQg4wmXOnL4dq8bFMqcMwrZW2WvKvYcXt0ELsL6gyCInQ46oKN7LjZULZ6587-NxC0VlBoByKTMjAjrDMF','eVFr22oC0nA:APA91bEXLqRi6wVA9P0ijxl02mgR7e6HpkJvMX2fd-pDMYv-wKZJ7c_xMvRCJn1UbNl2bWYikOFVAB6Wsj92z2m9_cbS2qCBqnf5re_cy2iVuuIkQwOLGKwQ_wUOsfkxvaETZdZiWqlc'],
+      var message;
+      message = {
+        to: 'eVFr22oC0nA:APA91bEXLqRi6wVA9P0ijxl02mgR7e6HpkJvMX2fd-pDMYv-wKZJ7c_xMvRCJn1UbNl2bWYikOFVAB6Wsj92z2m9_cbS2qCBqnf5re_cy2iVuuIkQwOLGKwQ_wUOsfkxvaETZdZiWqlc',
+        data: {
+          D_day : pan.D_day
+        }
+      }
+      fcm.send(message, function(err, response){
+        if (err) {
+            console.log("Something has gone wrong!")
+        } else {
+            console.log("Successfully sent with response: ", response)
+        }
+      })
+      message = {
+        to: 'fa-nJor7aWs:APA91bG6LUSfTC9pOvuwPOEIDuY_VoavmY0pa1ylHlFU1FLex2gxNAi_GqfQg4wmXOnL4dq8bFMqcMwrZW2WvKvYcXt0ELsL6gyCInQ46oKN7LjZULZ6587-NxC0VlBoByKTMjAjrDMF',
+        data: {
+          D_day : pan.D_day
+        }
+      }
+      fcm.send(message, function(err, response){
+        if (err) {
+            console.log("Something has gone wrong!")
+        } else {
+            console.log("Successfully sent with response: ", response)
+        }
+      })
+      message = {
+        to: 'fZ9pmwebsgI:APA91bELcn48u99AAGrmp-ktHla5mJ1BROgmAZ73xjbq6yn-lOhqGPd1KTxAd6_ezSDcJvF9uhDQY_GpTagwpHzsR5BnIOMC8jSLJz7wCuCIA0yihbhQSTbl3tda59b6Amcru5O8nKRm',
         data: {
           D_day : pan.D_day
         }
