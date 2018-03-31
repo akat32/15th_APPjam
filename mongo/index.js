@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost/MCmong2');
+var db = mongoose.connect('mongodb://localhost/MCmong');
 mongoose.Promise = global.Promise;
 
 var GroupSchema = mongoose.Schema({
