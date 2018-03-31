@@ -49,9 +49,7 @@ var SoloSchema = mongoose.Schema({
   D_day : {type : String},
   randomNum : {type : Number},
   num : {type : Number, default:0},
-  fcm_key : [{
-    key : {type : String}
-  }]
+  fcm_key : {type : String}
 });
 
 

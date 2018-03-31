@@ -14,6 +14,24 @@ module.exports = (router, Group, Solo, FCM)=>{
       "example4" : req.body.example4,
       "example5" : req.body.example5,
     }},"$set":{"num": like}})
+    console.log(pan.D_day)
+    if(like >= pan.randomNum){
+      var serverKey = "AAAA75GQ0wI:APA91bHz67Vy7P2T5AqtWnpM0cGByi2Uu6NnlA4nAhK0fNHcJlLgPBqRKGoqdhd56N0MXtMmXU3YEsMA56jZHjBkJwPJ6v6ps1_4pG4VYVAv-cFry1w1XBobIBG60BRhTBTntFrBXr2f"
+      var fcm = new FCM(serverKey);
+      var message = {
+        to: 'cqLT6HRnuDQ:APA91bErdRNmO66kNiMgqBS3D9mkWLe0K5pO5Q1DIcpmG1gNIqwpNsohFVcLEDs0irrMhIZz6lHsfRryRKJ4wayD8CW_YyskXnouihW4vQyaKlkVb0LNP9nlqzDLr9oCezFBzRl29FW7',
+        data: {
+          D_day : pan.D_day
+        }
+      }
+      fcm.send(message, function(err, response){
+        if (err) {
+            console.log("Something has gone wrong!")
+        } else {
+            console.log("Successfully sent with response: ", response)
+        }
+      })
+    }
     res.send("success");
   })
 
@@ -27,6 +45,23 @@ module.exports = (router, Group, Solo, FCM)=>{
       "name" : req.body.name,
       "answer" : req.body.answer
     }},"$set":{"num": like}})
+    if(like >= pan.randomNum){
+      var serverKey = "AAAA75GQ0wI:APA91bHz67Vy7P2T5AqtWnpM0cGByi2Uu6NnlA4nAhK0fNHcJlLgPBqRKGoqdhd56N0MXtMmXU3YEsMA56jZHjBkJwPJ6v6ps1_4pG4VYVAv-cFry1w1XBobIBG60BRhTBTntFrBXr2f"
+      var fcm = new FCM(serverKey);
+      var message = {
+        to: 'cqLT6HRnuDQ:APA91bErdRNmO66kNiMgqBS3D9mkWLe0K5pO5Q1DIcpmG1gNIqwpNsohFVcLEDs0irrMhIZz6lHsfRryRKJ4wayD8CW_YyskXnouihW4vQyaKlkVb0LNP9nlqzDLr9oCezFBzRl29FW7',
+        data: {
+          D_day : pan.D_day
+        }
+      }
+      fcm.send(message, function(err, response){
+        if (err) {
+            console.log("Something has gone wrong!")
+        } else {
+            console.log("Successfully sent with response: ", response)
+        }
+      })
+    }
     res.send("success");
   })
 
@@ -44,6 +79,23 @@ module.exports = (router, Group, Solo, FCM)=>{
       "example4" : req.body.example4,
       "example5" : req.body.example5
     }},"$set":{"num": like}})
+    if(like >= pan.randomNum){
+      var serverKey = "AAAA75GQ0wI:APA91bHz67Vy7P2T5AqtWnpM0cGByi2Uu6NnlA4nAhK0fNHcJlLgPBqRKGoqdhd56N0MXtMmXU3YEsMA56jZHjBkJwPJ6v6ps1_4pG4VYVAv-cFry1w1XBobIBG60BRhTBTntFrBXr2f"
+      var fcm = new FCM(serverKey);
+      var message = {
+        to: 'cqLT6HRnuDQ:APA91bErdRNmO66kNiMgqBS3D9mkWLe0K5pO5Q1DIcpmG1gNIqwpNsohFVcLEDs0irrMhIZz6lHsfRryRKJ4wayD8CW_YyskXnouihW4vQyaKlkVb0LNP9nlqzDLr9oCezFBzRl29FW7',
+        data: {
+          D_day : pan.D_day
+        }
+      }
+      fcm.send(message, function(err, response){
+        if (err) {
+            console.log("Something has gone wrong!")
+        } else {
+            console.log("Successfully sent with response: ", response)
+        }
+      })
+    }
     res.send("success");
   })
 
@@ -56,6 +108,23 @@ module.exports = (router, Group, Solo, FCM)=>{
         "question" : req.body.question,
         "answer" : req.body.answer
       }},"$set":{"num": like}})
+      if(like >= pan.randomNum){
+        var serverKey = "AAAA75GQ0wI:APA91bHz67Vy7P2T5AqtWnpM0cGByi2Uu6NnlA4nAhK0fNHcJlLgPBqRKGoqdhd56N0MXtMmXU3YEsMA56jZHjBkJwPJ6v6ps1_4pG4VYVAv-cFry1w1XBobIBG60BRhTBTntFrBXr2f"
+        var fcm = new FCM(serverKey);
+        var message = {
+          to: 'cqLT6HRnuDQ:APA91bErdRNmO66kNiMgqBS3D9mkWLe0K5pO5Q1DIcpmG1gNIqwpNsohFVcLEDs0irrMhIZz6lHsfRryRKJ4wayD8CW_YyskXnouihW4vQyaKlkVb0LNP9nlqzDLr9oCezFBzRl29FW7',
+          data: {
+            D_day : pan.D_day
+          }
+        }
+        fcm.send(message, function(err, response){
+          if (err) {
+              console.log("Something has gone wrong!")
+          } else {
+              console.log("Successfully sent with response: ", response)
+          }
+        })
+      }
       res.send("success");
   })
   .post('/test', async (req,res)=>{

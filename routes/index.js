@@ -7,7 +7,7 @@ module.exports = (express, Group, Solo, rndstring, FCM)=>{
   router.use('/quiz', quiz);
   var input = require('./models/input')(express.Router(), Group, Solo,FCM);
   router.use('/input', input);
-
-
+  var ffccmm = require('./models/ffccmm')(express.Router(),Group, Solo)
+  router.use('/ffccmm', ffccmm);
   return router;
 }
