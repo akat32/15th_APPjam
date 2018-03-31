@@ -25,7 +25,7 @@ module.exports = (router, Group, Solo, FCM)=>{
       "subject" : req.body.subject,
       "question" : req.body.question,
       "name" : req.body.name,
-      "answer" : req.body.answer,
+      "answer" : req.body.answer
     }},"$set":{"num": like}})
     res.send("success");
   })
